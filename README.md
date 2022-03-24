@@ -1,9 +1,9 @@
 JAMR - AMR Parser
 =================
 
-JAMR is a semantic parser, generator, and aligner for the [Abstract Meaning Representation](http://amr.isi.edu/).
+This is the JAMR Parser. JAMR is a semantic parser, generator, and aligner for the [Abstract Meaning Representation](http://amr.isi.edu/).
 
-This is the JAMR Parser. The original to be found under https://github.com/jflanigan/jamr.git. We provide minor updates to be runnable in 2022 (see https://github.com/jflanigan/jamr/issues/44).
+The original is to be found under https://github.com/jflanigan/jamr.git. We provide minor updates to be runnable in 2022 (see https://github.com/jflanigan/jamr/issues/44).
 To be tested on Ubuntu 20.04L.
 Note that we're only interested in the aligner, so, other components haven't been tested.
 The current default branch is based on a the original SemEval-2061 branch, but has been renamed to `main`.
@@ -14,7 +14,22 @@ First checkout the github repository (or download the latest release):
 
     git clone https://github.com/chiarcos/jamr.git
 
-JAMR depends on [Scala](http://www.scala-lang.org), [Illinois NER
+Install prerequisites:
+
+    # Scala
+    sudo apt-get remove scala-library scala
+    sudo wget https://downloads.lightbend.com/scala/2.12.1/scala-2.12.1.deb
+    sudo dpkg -i scala-2.12.1.deb
+    
+    ## SBT
+    echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+    sudo apt-get update
+    sudo apt-get install sbt
+
+> Note: This is it where it currently fails. `The repository 'https://dl.bintray.com/sbt/debian  Release' does not have a Release file.`
+
+Further, JAMR depends on [Illinois NER
 system](http://cogcomp.cs.illinois.edu/page/download_view/NETagger) v2.7, tokenization scripts in
 [cdec](https://github.com/redpony/cdec), and [WordNet](http://wordnetcode.princeton.edu/3.0/WordNet-3.0.tar.gz) for the
 aligner. To download these dependencies into the subdirectory `tools`, cd to the `jamr` repository and run (requires
