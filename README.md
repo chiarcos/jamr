@@ -3,21 +3,21 @@ JAMR - AMR Parser
 
 This is the JAMR Parser, updated for SemEval 2016 Task 8.
 
+Minor updates to be runnable in 2022 (see https://github.com/jflanigan/jamr/issues/44).
+To be tested on Ubuntu 20.04L.
+Note that we're only interested in the aligner, so, other components haven't been tested.
+The current default branch is based on a the original SemEval-2061 branch, but has been renamed to `main`.
+
 JAMR is a semantic parser, generator, and aligner for the [Abstract Meaning Representation](http://amr.isi.edu/).  The
 parser and aligner have been updated to include improvements from SemEval 2016 Task 8.
 
 For the generator, see the branch [Generator](http://github.com/jflanigan/jamr/tree/Generator).
-
-We have released [hand-alignments](docs/Hand_Alignments.md) for 200 sentences of the AMR corpus.
-
-For the performance of the parser (including for the parser from SemEval 2016), see [docs/Parser_Performance](docs/Parser_Performance.md).
 
 # Building
 
 First checkout the github repository (or download the latest release):
 
     git clone https://github.com/jflanigan/jamr.git
-    git checkout Semeval-2016
 
 JAMR depends on [Scala](http://www.scala-lang.org), [Illinois NER
 system](http://cogcomp.cs.illinois.edu/page/download_view/NETagger) v2.7, tokenization scripts in
@@ -110,4 +110,3 @@ The `optional_iteration` specifies which weight file iteration to use, otherwise
 output will be in `models/my_directory/gold_amr_file.parsed-gold-concepts` for the parser with oracle concept ID,
 `models/my_directory/gold_amr_file.parsed` for the full pipeline, and the results saved in
 `models/my_directory/gold_amr_file.results`.
-
