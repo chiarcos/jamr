@@ -1,23 +1,18 @@
 JAMR - AMR Parser
 =================
 
-This is the JAMR Parser, updated for SemEval 2016 Task 8.
+JAMR is a semantic parser, generator, and aligner for the [Abstract Meaning Representation](http://amr.isi.edu/).
 
-Minor updates to be runnable in 2022 (see https://github.com/jflanigan/jamr/issues/44).
+This is the JAMR Parser. The original to be found under https://github.com/jflanigan/jamr.git. We provide minor updates to be runnable in 2022 (see https://github.com/jflanigan/jamr/issues/44).
 To be tested on Ubuntu 20.04L.
 Note that we're only interested in the aligner, so, other components haven't been tested.
 The current default branch is based on a the original SemEval-2061 branch, but has been renamed to `main`.
-
-JAMR is a semantic parser, generator, and aligner for the [Abstract Meaning Representation](http://amr.isi.edu/).  The
-parser and aligner have been updated to include improvements from SemEval 2016 Task 8.
-
-For the generator, see the branch [Generator](http://github.com/jflanigan/jamr/tree/Generator).
 
 # Building
 
 First checkout the github repository (or download the latest release):
 
-    git clone https://github.com/jflanigan/jamr.git
+    git clone https://github.com/chiarcos/jamr.git
 
 JAMR depends on [Scala](http://www.scala-lang.org), [Illinois NER
 system](http://cogcomp.cs.illinois.edu/page/download_view/NETagger) v2.7, tokenization scripts in
